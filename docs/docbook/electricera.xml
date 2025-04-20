@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<set xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="_setindex" xml:lang="en-US">
+    <info>
+      <title>Electric Era Charging Network Uptime Report Display Program Documentation Set</title>
+    </info>
+
+  <book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="_specification" xml:lang="en-US">
+    <info>
+      <title>Electric Era Charging Network Uptime Report Display Program</title>
+    </info>
+    <xi:include href="specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+      <chapter>
+        <title>Using the Program</title>
+          <info>
+          <author>
+          <personname>
+          <firstname>Jaspreet</firstname>
+          <surname>Dha</surname>
+          </personname>
+          </author>
+        </info>
+      <para>
+        As mentioned in <xref linkend="parameters"/>, the program is meant to be run on the AMD64 platform. For your information, this does not mean that the program will only run only AMD CPUs. AMD licences the AMD64 instruction set to Intel and any modern Intel processor will be able to run programs compiled for the AMD64 instruction set.
+      </para>
+      
+        <section id="diagrams">
+    <title>Diagrams</title>
+    <section>
+      <title>Class Diagram</title>
+      <para/>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="SVG" width="6.5in" fileref="class-diagram.svg"/>
+        </imageobject>
+      </mediaobject>
+    </section>
+    <section>
+      <title>Removing Overlaps</title>
+      <para/>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="SVG" width="6.5in" fileref="removeoverlaps1.svg"/>
+        </imageobject>
+      </mediaobject>
+    </section>
+    <section>
+      <title>Removing Overlaps: Action Taken</title>
+      <para/>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="SVG" width="6.5in" fileref="removeoverlaps2.svg"/>
+        </imageobject>
+      </mediaobject>
+    </section>
+    </section>
+
+      </chapter>
+  </book>
+
+  <xi:include href="../doxygen/docbook/index.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</set>

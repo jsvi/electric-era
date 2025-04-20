@@ -1,0 +1,876 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title></title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /></head><body><div xml:lang="en-US" class="set" lang="en-US"><div class="titlepage"><hr /></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="book"><a href="#_specification">Electric Era Charging Network Uptime Report Display Program</a></span></dt><dd><dl><dt><span class="chapter"><a href="#idp7">1. Electric Era Coding Challenge Specification</a></span></dt><dd><dl><dt><span class="section"><a href="#idp1">Challenge</a></span></dt><dt><span class="section"><a href="#idp2">Input File Format</a></span></dt><dt><span class="section"><a href="#idp3">Program Parameters and Runtime Conditions</a></span></dt><dt><span class="section"><a href="#idp4">Output Format</a></span></dt><dt><span class="section"><a href="#idp5">Testing and Submission</a></span></dt><dt><span class="section"><a href="#idp6">Considerations</a></span></dt></dl></dd></dl></dd><dt><span class="book"><a href="#_index">Electric Era Charging Network Uptime Report Display Class Documentation</a></span></dt><dd><dl><dt><span class="chapter"><a href="#idp8">1. Todo List</a></span></dt><dd><dl><dt><span class="section"><a href="#_todo"></a></span></dt></dl></dd><dt><span class="chapter"><a href="#idp44">2. Class Documentation</a></span></dt><dd><dl><dt><span class="section"><a href="#_classAvailabilityReport">AvailabilityReport Class Reference</a></span></dt><dd><dl><dt><span class="section"><a href="#idp9">Detailed Description</a></span></dt><dt><span class="section"><a href="#idp11">Constructor &amp; Destructor Documentation</a></span></dt><dt><span class="section"><a href="#idp15">Member Function Documentation</a></span></dt></dl></dd><dt><span class="section"><a href="#_classCharger">Charger Class Reference</a></span></dt><dd><dl><dt><span class="section"><a href="#idp16">Detailed Description</a></span></dt><dt><span class="section"><a href="#idp18">Constructor &amp; Destructor Documentation</a></span></dt><dt><span class="section"><a href="#idp23">Member Function Documentation</a></span></dt><dt><span class="section"><a href="#idp25">Member Data Documentation</a></span></dt></dl></dd><dt><span class="section"><a href="#_classChargingNetwork">ChargingNetwork Class Reference</a></span></dt><dd><dl><dt><span class="section"><a href="#idp26">Detailed Description</a></span></dt><dt><span class="section"><a href="#idp28">Constructor &amp; Destructor Documentation</a></span></dt><dt><span class="section"><a href="#idp32">Member Function Documentation</a></span></dt><dt><span class="section"><a href="#idp35">Member Data Documentation</a></span></dt></dl></dd><dt><span class="section"><a href="#_structstd_1_1less_3_01Charger_01_4">std::less&lt; Charger &gt; Struct Reference</a></span></dt><dt><span class="section"><a href="#_structstd_1_1less_3_01Station_01_4">std::less&lt; Station &gt; Struct Reference</a></span></dt><dt><span class="section"><a href="#_classStation">Station Class Reference</a></span></dt><dd><dl><dt><span class="section"><a href="#idp36">Detailed Description</a></span></dt><dt><span class="section"><a href="#idp39">Constructor &amp; Destructor Documentation</a></span></dt><dt><span class="section"><a href="#idp43">Member Function Documentation</a></span></dt></dl></dd></dl></dd><dt><span class="index"><a href="#idp45">Index</a></span></dt></dl></dd></dl></div>
+
+  <div xml:lang="en-US" class="book" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="_specification"></a>Electric Era Charging Network Uptime Report Display Program</h1></div></div><hr /></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="chapter"><a href="#idp7">1. Electric Era Coding Challenge Specification</a></span></dt><dd><dl><dt><span class="section"><a href="#idp1">Challenge</a></span></dt><dt><span class="section"><a href="#idp2">Input File Format</a></span></dt><dt><span class="section"><a href="#idp3">Program Parameters and Runtime Conditions</a></span></dt><dt><span class="section"><a href="#idp4">Output Format</a></span></dt><dt><span class="section"><a href="#idp5">Testing and Submission</a></span></dt><dt><span class="section"><a href="#idp6">Considerations</a></span></dt></dl></dd></dl></div>
+  
+  <div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="idp7"></a>Chapter 1. Electric Era Coding Challenge Specification</h1></div><div><div class="author"><h3 class="author"><span class="firstname">Hasitha</span> <span class="surname">Dharmasiri</span></h3></div></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#idp1">Challenge</a></span></dt><dt><span class="section"><a href="#idp2">Input File Format</a></span></dt><dt><span class="section"><a href="#idp3">Program Parameters and Runtime Conditions</a></span></dt><dt><span class="section"><a href="#idp4">Output Format</a></span></dt><dt><span class="section"><a href="#idp5">Testing and Submission</a></span></dt><dt><span class="section"><a href="#idp6">Considerations</a></span></dt></dl></div>
+    
+      
+    <div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idp1"></a>Challenge</h2></div></div></div>
+      
+      <div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+          <p>You must write a program that calculates uptime for stations in a charging network.</p>
+        </li><li class="listitem">
+          <p>It will take in a formatted input file that indicates individual charger uptime status for a given time period and write output to standard-output (stdout).</p>
+        </li><li class="listitem">
+          <p>Station Uptime is defined as the percentage of time that any charger at a station was available, out of the entire time period that any charger at that station was reporting in.</p>
+        </li></ol></div>
+    </div>
+    <div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idp2"></a>Input File Format</h2></div></div></div>
+      
+      <div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+          <p>The input file will be a simple ASCII text file.</p>
+        </li><li class="listitem">
+          <p>The first section will be a list of station IDs that indicate the Charger IDs present at each station.</p>
+        </li><li class="listitem">
+          <p>The second section will be a report of each Charger ID's availability reports.</p>
+        </li><li class="listitem">
+          <p>An availability report will contain the Charger ID, the start time, the end time, and if the charger was "up" (i.e. available) or not.</p>
+        </li><li class="listitem">
+          <p>The following preconditons will apply:</p>
+        </li><li class="listitem">
+          <p>Station ID will be guaranteed to be a unsigned 32-bit integer and guaranteed to be unique to any other Station ID.</p>
+        </li><li class="listitem">
+          <p>Charger ID will be guaranteed to be a unsigned 32-bit integer and guaranteed to be unique across all Station IDs.</p>
+        </li><li class="listitem">
+          <p>start time nanos and end time nanos are guaranteed to fit within a unsigned 64-bit integer.</p>
+        </li><li class="listitem">
+          <p>up will always be true or false</p>
+        </li><li class="listitem">
+          <p>Each Charger ID may have multiple availability report entries.</p>
+        </li><li class="listitem">
+          <p>Report entries need not be contiguous in time for a given Charger ID.</p>
+        </li><li class="listitem">
+          <p>A gap in time in a given Charger ID's availability report should count as downtime.</p>
+        </li><li class="listitem">
+          <div class="informaltable">
+            <table class="informaltable" border="1"><colgroup><col /></colgroup><tbody><tr><td>
+                    <div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem">
+                        <p>[Stations]</p>
+                      </li><li class="listitem">
+                        <p>&lt;Station ID 1&gt; &lt;Charger ID 1&gt; &lt;Charger ID 2&gt; ... &lt;Charger ID n&gt;</p>
+                      </li><li class="listitem">
+                        <p>...</p>
+                      </li><li class="listitem">
+                        <p>&lt;Station ID n&gt; ...</p>
+                      </li><li class="listitem">
+                        <p></p>
+                      </li><li class="listitem">
+                        <p>[Charger Availability Reports]</p>
+                      </li><li class="listitem">
+                        <p>&lt;Charger ID 1&gt; &lt;start time nanos&gt; &lt;end time nanos&gt; &lt;up (true/false)&gt;</p>
+                      </li><li class="listitem">
+                        <p>&lt;Charger ID 1&gt; &lt;start time nanos&gt; &lt;end time nanos&gt; &lt;up (true/false)&gt;</p>
+                      </li><li class="listitem">
+                        <p>...</p>
+                      </li><li class="listitem">
+                        <p>&lt;Charger ID 2&gt; &lt;start time nanos&gt; &lt;end time nanos&gt; &lt;up (true/false)&gt;</p>
+                      </li><li class="listitem">
+                        <p>&lt;Charger ID 2&gt; &lt;start time nanos&gt; &lt;end time nanos&gt; &lt;up (true/false)&gt;</p>
+                        <p>...</p>
+                        <p>&lt;Charger ID n&gt; &lt;start time nanos&gt; &lt;end time nanos&gt; &lt;up (true/false)&gt;</p>
+                      </li></ol></div>
+                  </td></tr></tbody></table>
+          </div>
+        </li></ol></div>
+    </div>
+    <div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idp3"></a>Program Parameters and Runtime Conditions</h2></div></div></div>
+      
+      <div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+          <p>Your program will be executed in a Linux environment running on an amd64 architecture. If your chosen language of submission is compiled, ensure it compiles in that environment. Please avoid use of non-standard dependencies.</p>
+        </li><li class="listitem">
+          <p>The program should accept a single argument, the path to the input file. The input file may not necessarily be co-located in the same folder as the program.</p>
+        </li><li class="listitem">
+          <p>Example CLI execution:</p>
+        </li><li class="listitem">
+          <p><a id="code-50"></a><a id="LC1"></a>./your_submission relative/path/to/input/file</p>
+        </li></ol></div>
+    </div>
+    <div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idp4"></a>Output Format</h2></div></div></div>
+      
+      <div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+          <p>The output shall be written to stdout. If the input is invalid, please simply print ERROR and exit. stderr may contain detailed error information but is not mandatory. If there is no error, please write stdout as follows, and then exit gracefully.</p>
+        </li><li class="listitem">
+          <p>&lt;Station ID 1&gt; &lt;Station ID 1 uptime&gt;</p>
+        </li><li class="listitem">
+          <p>&lt;Station ID 2&gt; &lt;Station ID 2 uptime&gt;</p>
+        </li><li class="listitem">
+          <p>...</p>
+        </li><li class="listitem">
+          <p>&lt;Station ID n&gt; &lt;Station ID n uptime&gt;</p>
+        </li><li class="listitem">
+          <p>Station ID n uptime should be an integer in the range [0-100] representing the given station's uptime percentage. The value should be rounded down to the nearest percent.</p>
+        </li><li class="listitem">
+          <p>Please output Station IDs in <span class="emphasis"><em>ascending order</em></span>.</p>
+        </li></ol></div>
+    </div>
+    <div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idp5"></a>Testing and Submission</h2></div></div></div>
+      
+      <div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+          <p>This repository contains a few example input files, along with the expected stdout output (this expected stdout is encoded in a separate paired file).</p>
+        </li><li class="listitem">
+          <p>Please submit the following in a zip file to coding-challenge-submissions@electricera.tech for consideration:</p>
+        </li></ol></div>
+    </div>
+    <div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idp6"></a>Considerations</h2></div></div></div>
+      
+      <div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">All aspects of your solution will be considered. Be mindful of:</li><li class="listitem">Correctness for both normal and edge cases</li><li class="listitem">Error-handling for improper inputs or unmet preconditions</li><li class="listitem">Maintainability and readability of your solution</li><li class="listitem">Scalability of the solution with increasingly large datasets</li></ol></div>
+    </div>
+  </div>
+</div>
+  <div xml:lang="en-US" class="book" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="_index"></a>Electric Era Charging Network Uptime Report Display Class Documentation</h1></div></div><hr /></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="chapter"><a href="#idp8">1. Todo List</a></span></dt><dd><dl><dt><span class="section"><a href="#_todo"></a></span></dt></dl></dd><dt><span class="chapter"><a href="#idp44">2. Class Documentation</a></span></dt><dd><dl><dt><span class="section"><a href="#_classAvailabilityReport">AvailabilityReport Class Reference</a></span></dt><dd><dl><dt><span class="section"><a href="#idp9">Detailed Description</a></span></dt><dt><span class="section"><a href="#idp11">Constructor &amp; Destructor Documentation</a></span></dt><dt><span class="section"><a href="#idp15">Member Function Documentation</a></span></dt></dl></dd><dt><span class="section"><a href="#_classCharger">Charger Class Reference</a></span></dt><dd><dl><dt><span class="section"><a href="#idp16">Detailed Description</a></span></dt><dt><span class="section"><a href="#idp18">Constructor &amp; Destructor Documentation</a></span></dt><dt><span class="section"><a href="#idp23">Member Function Documentation</a></span></dt><dt><span class="section"><a href="#idp25">Member Data Documentation</a></span></dt></dl></dd><dt><span class="section"><a href="#_classChargingNetwork">ChargingNetwork Class Reference</a></span></dt><dd><dl><dt><span class="section"><a href="#idp26">Detailed Description</a></span></dt><dt><span class="section"><a href="#idp28">Constructor &amp; Destructor Documentation</a></span></dt><dt><span class="section"><a href="#idp32">Member Function Documentation</a></span></dt><dt><span class="section"><a href="#idp35">Member Data Documentation</a></span></dt></dl></dd><dt><span class="section"><a href="#_structstd_1_1less_3_01Charger_01_4">std::less&lt; Charger &gt; Struct Reference</a></span></dt><dt><span class="section"><a href="#_structstd_1_1less_3_01Station_01_4">std::less&lt; Station &gt; Struct Reference</a></span></dt><dt><span class="section"><a href="#_classStation">Station Class Reference</a></span></dt><dd><dl><dt><span class="section"><a href="#idp36">Detailed Description</a></span></dt><dt><span class="section"><a href="#idp39">Constructor &amp; Destructor Documentation</a></span></dt><dt><span class="section"><a href="#idp43">Member Function Documentation</a></span></dt></dl></dd></dl></dd><dt><span class="index"><a href="#idp45">Index</a></span></dt></dl></div><div class="list-of-tables"><p><strong>List of Tables</strong></p><dl><dt>2.1. <a href="#idp46"></a></dt><dt>2.2. <a href="#idp47"></a></dt><dt>2.3. <a href="#idp48"></a></dt><dt>2.4. <a href="#idp49"></a></dt><dt>2.5. <a href="#idp50"></a></dt><dt>2.6. <a href="#idp51"></a></dt><dt>2.7. <a href="#idp52"></a></dt><dt>2.8. <a href="#idp53"></a></dt><dt>2.9. <a href="#idp54"></a></dt><dt>2.10. <a href="#idp55"></a></dt><dt>2.11. <a href="#idp56"></a></dt><dt>2.12. <a href="#idp57"></a></dt><dt>2.13. <a href="#idp58"></a></dt><dt>2.14. <a href="#idp59"></a></dt><dt>2.15. <a href="#idp60"></a></dt><dt>2.16. <a href="#idp61"></a></dt><dt>2.17. <a href="#idp62"></a></dt></dl></div>
+    
+<div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="idp8"></a>Chapter 1. Todo List</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#_todo"></a></span></dt></dl></div>
+    
+    <div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"></div>
+
+<div class="variablelist"><dl class="variablelist"><dt><span class="term">Class <a class="link" href="#_classAvailabilityReport" title="AvailabilityReport Class Reference">AvailabilityReport</a>  </span></dt><dd>
+<p><a id="_todo_1_todo000001"></a>write docs  </p>
+</dd><dt><span class="term">Member <a class="link" href="#_classAvailabilityReport_1a80783ba4d2b87c8f77fadc9cfd0ff0a2">AvailabilityReport::operator!=</a>  (const <a class="link" href="#_classAvailabilityReport" title="AvailabilityReport Class Reference">AvailabilityReport</a> &amp;other) const</span></dt><dd>
+<p><a id="_todo_1_todo000003"></a>write docs </p>
+</dd><dt><span class="term">Member <a class="link" href="#_classAvailabilityReport_1a4027c7a6952c8963bb4cacf9d08ea2cf">AvailabilityReport::operator==</a>  (const <a class="link" href="#_classAvailabilityReport" title="AvailabilityReport Class Reference">AvailabilityReport</a> &amp;other) const</span></dt><dd>
+<p><a id="_todo_1_todo000002"></a>write docs </p>
+</dd><dt><span class="term">Class <a class="link" href="#_classCharger" title="Charger Class Reference">Charger</a>  </span></dt><dd>
+<p><a id="_todo_1_todo000004"></a>write docs  </p>
+</dd><dt><span class="term">Class <a class="link" href="#_classChargingNetwork" title="ChargingNetwork Class Reference">ChargingNetwork</a>  </span></dt><dd>
+<p><a id="_todo_1_todo000005"></a>write docs  </p>
+</dd><dt><span class="term">Member <a class="link" href="#_classChargingNetwork_1ab076cf88e36985079b70a1565b7b4d92">ChargingNetwork::operator!=</a>  (const <a class="link" href="#_classChargingNetwork" title="ChargingNetwork Class Reference">ChargingNetwork</a> &amp;other) const</span></dt><dd>
+<p><a id="_todo_1_todo000007"></a>write docs </p>
+</dd><dt><span class="term">Member <a class="link" href="#_classChargingNetwork_1a1f1ec9bc020b77e69ba6a4f82e275df5">ChargingNetwork::operator==</a>  (const <a class="link" href="#_classChargingNetwork" title="ChargingNetwork Class Reference">ChargingNetwork</a> &amp;other) const</span></dt><dd>
+<p><a id="_todo_1_todo000006"></a>write docs </p>
+</dd><dt><span class="term">Class <a class="link" href="#_classStation" title="Station Class Reference">Station</a>  </span></dt><dd>
+<p><a id="_todo_1_todo000008"></a>write docs  </p>
+</dd><dt><span class="term">Member <a class="link" href="#_classStation_1ad0227ba53445442e48379ca7d4975f4d">Station::operator!=</a>  (const <a class="link" href="#_classStation" title="Station Class Reference">Station</a> &amp;other) const</span></dt><dd>
+<p><a id="_todo_1_todo000010"></a>write docs </p>
+</dd><dt><span class="term">Member <a class="link" href="#_classStation_1a8a7eae4c39f16d6f04f2c4d1ca1a1f57">Station::operator==</a>  (const <a class="link" href="#_classStation" title="Station Class Reference">Station</a> &amp;other) const</span></dt><dd>
+<p><a id="_todo_1_todo000009"></a>write docs</p>
+</dd></dl></div><p>
+</p>
+</div>
+</div>
+<div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="idp44"></a>Chapter 2. Class Documentation</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#_classAvailabilityReport">AvailabilityReport Class Reference</a></span></dt><dd><dl><dt><span class="section"><a href="#idp9">Detailed Description</a></span></dt><dt><span class="section"><a href="#idp11">Constructor &amp; Destructor Documentation</a></span></dt><dt><span class="section"><a href="#idp15">Member Function Documentation</a></span></dt></dl></dd><dt><span class="section"><a href="#_classCharger">Charger Class Reference</a></span></dt><dd><dl><dt><span class="section"><a href="#idp16">Detailed Description</a></span></dt><dt><span class="section"><a href="#idp18">Constructor &amp; Destructor Documentation</a></span></dt><dt><span class="section"><a href="#idp23">Member Function Documentation</a></span></dt><dt><span class="section"><a href="#idp25">Member Data Documentation</a></span></dt></dl></dd><dt><span class="section"><a href="#_classChargingNetwork">ChargingNetwork Class Reference</a></span></dt><dd><dl><dt><span class="section"><a href="#idp26">Detailed Description</a></span></dt><dt><span class="section"><a href="#idp28">Constructor &amp; Destructor Documentation</a></span></dt><dt><span class="section"><a href="#idp32">Member Function Documentation</a></span></dt><dt><span class="section"><a href="#idp35">Member Data Documentation</a></span></dt></dl></dd><dt><span class="section"><a href="#_structstd_1_1less_3_01Charger_01_4">std::less&lt; Charger &gt; Struct Reference</a></span></dt><dt><span class="section"><a href="#_structstd_1_1less_3_01Station_01_4">std::less&lt; Station &gt; Struct Reference</a></span></dt><dt><span class="section"><a href="#_classStation">Station Class Reference</a></span></dt><dd><dl><dt><span class="section"><a href="#idp36">Detailed Description</a></span></dt><dt><span class="section"><a href="#idp39">Constructor &amp; Destructor Documentation</a></span></dt><dt><span class="section"><a href="#idp43">Member Function Documentation</a></span></dt></dl></dd></dl></div>
+    
+    <div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_classAvailabilityReport"></a>AvailabilityReport Class Reference</h2></div></div></div>
+
+<a id="idp261" class="indexterm"></a>
+<p>
+<code class="computeroutput">#include &lt;AvailabilityReport.h&gt;</code>
+</p>
+Collaboration diagram for AvailabilityReport:<p>
+    </p><div class="informalfigure">
+        <div class="mediaobject" align="center"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="50%"><tr><td align="center" valign="middle"><img src="classAvailabilityReport__coll__graph.png" align="middle" /></td></tr></table></div>
+    </div><p>
+</p>
+<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="idp270"></a>Public Member Functions    </h3></div></div></div>
+    
+        <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a id="_classAvailabilityReport_1a367a7cbd667b1d18cff632da3df7a3fd"></a><a class="link" href="#_classAvailabilityReport_1a367a7cbd667b1d18cff632da3df7a3fd">AvailabilityReport</a> ()</p>
+
+<p>Default constructor. </p>
+</li><li class="listitem"><p><a class="link" href="#_classAvailabilityReport_1a2eea5e56759064a21b708de7177f84f6">AvailabilityReport</a> (const <a class="link" href="#_classAvailabilityReport" title="AvailabilityReport Class Reference">AvailabilityReport</a> &amp;other)</p>
+
+<p>Copy constructor. </p>
+</li><li class="listitem"><p><a id="_classAvailabilityReport_1ae08e86e990fa343eaa3f06d24a81e799"></a><a class="link" href="#_classAvailabilityReport_1ae08e86e990fa343eaa3f06d24a81e799">AvailabilityReport</a> (std::shared_ptr&lt; <a class="link" href="#_classCharger" title="Charger Class Reference">Charger</a> &gt; charger, nanoseconds startTime, nanoseconds endTime, bool available)</p>
+
+<p>Constructor. </p>
+</li><li class="listitem"><p><a id="_classAvailabilityReport_1a44ba6acb7b16bf6e3b27798fd625283f"></a><a class="link" href="#_classAvailabilityReport_1a44ba6acb7b16bf6e3b27798fd625283f">~AvailabilityReport</a> ()</p>
+
+<p>Destructor. </p>
+</li><li class="listitem"><p><a class="link" href="#_classAvailabilityReport" title="AvailabilityReport Class Reference">AvailabilityReport</a> &amp; <a class="link" href="#_classAvailabilityReport_1a7c8cd4b4a735434f7888587de0f508f6">operator=</a> (const <a class="link" href="#_classAvailabilityReport" title="AvailabilityReport Class Reference">AvailabilityReport</a> &amp;other)</p>
+
+<p>Assignment operator. </p>
+</li><li class="listitem"><p>bool <a class="link" href="#_classAvailabilityReport_1a4027c7a6952c8963bb4cacf9d08ea2cf">operator==</a> (const <a class="link" href="#_classAvailabilityReport" title="AvailabilityReport Class Reference">AvailabilityReport</a> &amp;other) const</p>
+</li><li class="listitem"><p>bool <a class="link" href="#_classAvailabilityReport_1a80783ba4d2b87c8f77fadc9cfd0ff0a2">operator!=</a> (const <a class="link" href="#_classAvailabilityReport" title="AvailabilityReport Class Reference">AvailabilityReport</a> &amp;other) const</p>
+</li></ul></div>
+</div>
+<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="idp308"></a>Public Attributes    </h3></div></div></div>
+    
+        <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a id="_classAvailabilityReport_1afc91d9e9cf210ea96e1f5ff56818f042"></a>std::shared_ptr&lt; <a class="link" href="#_classCharger" title="Charger Class Reference">Charger</a> &gt; <span class="strong"><strong>charger</strong></span> {nullptr}</p>
+</li><li class="listitem"><p><a id="_classAvailabilityReport_1aff53463b8366cc359e14678e556aed1d"></a>nanoseconds <span class="strong"><strong>startTime</strong></span> {0}</p>
+</li><li class="listitem"><p><a id="_classAvailabilityReport_1a75de3022c5e77daacf4e5fd6ece880b3"></a>nanoseconds <span class="strong"><strong>endTime</strong></span> {0}</p>
+</li><li class="listitem"><p><a id="_classAvailabilityReport_1a1b77d9582ff0317a3bea33265520c3ea"></a>bool <span class="strong"><strong>available</strong></span> {false}</p>
+</li></ul></div>
+</div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp9"></a>Detailed Description</h3></div></div></div>
+
+
+<p><a class="link" href="#_todo_1_todo000001">Todo</a> 
+</p><p>write docs </p><p>
+</p>
+</div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp11"></a>Constructor &amp; Destructor Documentation</h3></div></div></div>
+
+<a id="_classAvailabilityReport_1a2eea5e56759064a21b708de7177f84f6"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp10"></a>AvailabilityReport()</h4></div></div></div>
+    
+<a id="idp336" class="indexterm"></a>
+<a id="idp339" class="indexterm"></a>
+<p><code class="computeroutput">AvailabilityReport::AvailabilityReport (const <a class="link" href="#_classAvailabilityReport" title="AvailabilityReport Class Reference">AvailabilityReport</a> &amp; other)</code></p><p>
+
+</p><p>Copy constructor. </p><p>
+</p>
+
+<p>
+                </p><p>
+                    <strong>
+Parameters                    . </strong>
+                    
+                    </p><div class="table"><a id="idp46"></a><p class="title"><strong>Table 2.1. </strong></p><div class="table-contents">
+                        <table class="table" border="1"><colgroup><col align="left" /><col align="left" /></colgroup><tbody><tr><td align="left">other</td><td align="left">
+<p>TODO </p>
+</td></tr></tbody></table>
+                    </div></div><p><br class="table-break" />
+                    
+                </p><p>
+                </p>
+</div>
+</div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp15"></a>Member Function Documentation</h3></div></div></div>
+
+<a id="_classAvailabilityReport_1a80783ba4d2b87c8f77fadc9cfd0ff0a2"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp12"></a>operator!=()</h4></div></div></div>
+    
+<a id="idp362" class="indexterm"></a>
+<a id="idp365" class="indexterm"></a>
+<p><code class="computeroutput">bool AvailabilityReport::operator!= (const <a class="link" href="#_classAvailabilityReport" title="AvailabilityReport Class Reference">AvailabilityReport</a> &amp; other) const</code></p>
+<p><a class="link" href="#_todo_1_todo000003">Todo</a> 
+</p><p>write docs</p><p>
+</p>
+
+<p>
+                </p><p>
+                    <strong>
+Parameters                    . </strong>
+                    
+                    </p><div class="table"><a id="idp47"></a><p class="title"><strong>Table 2.2. </strong></p><div class="table-contents">
+                        <table class="table" border="1"><colgroup><col align="left" /><col align="left" /></colgroup><tbody><tr><td align="left">other</td><td align="left">
+<p>TODO </p>
+</td></tr></tbody></table>
+                    </div></div><p><br class="table-break" />
+                    
+                </p><p>
+                </p><p><strong>Returns. </strong>
+
+TODO 
+</p><p>
+</p>
+    </div><a id="_classAvailabilityReport_1a7c8cd4b4a735434f7888587de0f508f6"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp13"></a>operator=()</h4></div></div></div>
+    
+<a id="idp392" class="indexterm"></a>
+<a id="idp395" class="indexterm"></a>
+<p><code class="computeroutput"><a class="link" href="#_classAvailabilityReport" title="AvailabilityReport Class Reference">AvailabilityReport</a> &amp; AvailabilityReport::operator= (const <a class="link" href="#_classAvailabilityReport" title="AvailabilityReport Class Reference">AvailabilityReport</a> &amp; other)</code></p><p>
+
+</p><p>Assignment operator. </p><p>
+</p>
+
+<p>
+                </p><p>
+                    <strong>
+Parameters                    . </strong>
+                    
+                    </p><div class="table"><a id="idp48"></a><p class="title"><strong>Table 2.3. </strong></p><div class="table-contents">
+                        <table class="table" border="1"><colgroup><col align="left" /><col align="left" /></colgroup><tbody><tr><td align="left">other</td><td align="left">
+<p>TODO </p>
+</td></tr></tbody></table>
+                    </div></div><p><br class="table-break" />
+                    
+                </p><p>
+                </p><p><strong>Returns. </strong>
+
+TODO 
+</p><p>
+</p>
+    </div><a id="_classAvailabilityReport_1a4027c7a6952c8963bb4cacf9d08ea2cf"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp14"></a>operator==()</h4></div></div></div>
+    
+<a id="idp421" class="indexterm"></a>
+<a id="idp424" class="indexterm"></a>
+<p><code class="computeroutput">bool AvailabilityReport::operator== (const <a class="link" href="#_classAvailabilityReport" title="AvailabilityReport Class Reference">AvailabilityReport</a> &amp; other) const</code></p>
+<p><a class="link" href="#_todo_1_todo000002">Todo</a> 
+</p><p>write docs</p><p>
+</p>
+
+<p>
+                </p><p>
+                    <strong>
+Parameters                    . </strong>
+                    
+                    </p><div class="table"><a id="idp49"></a><p class="title"><strong>Table 2.4. </strong></p><div class="table-contents">
+                        <table class="table" border="1"><colgroup><col align="left" /><col align="left" /></colgroup><tbody><tr><td align="left">other</td><td align="left">
+<p>TODO </p>
+</td></tr></tbody></table>
+                    </div></div><p><br class="table-break" />
+                    
+                </p><p>
+                </p><p><strong>Returns. </strong>
+
+TODO 
+</p><p>
+</p>
+</div>
+<p>
+The documentation for this class was generated from the following files:</p>
+AvailabilityReport.hAvailabilityReport.cpp</div>
+</div>
+    <div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_classCharger"></a>Charger Class Reference</h2></div></div></div>
+
+<a id="idp451" class="indexterm"></a>
+<p>
+<code class="computeroutput">#include &lt;Charger.h&gt;</code>
+</p>
+<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="idp455"></a>Public Member Functions    </h3></div></div></div>
+    
+        <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a id="_classCharger_1a386eef9a5c151f3e5eb3ee67a0aeb0cb"></a><a class="link" href="#_classCharger_1a386eef9a5c151f3e5eb3ee67a0aeb0cb">Charger</a> ()</p>
+
+<p>Default constructor. </p>
+</li><li class="listitem"><p><a class="link" href="#_classCharger_1a85eb2b59b83e345341f814e61014b196">Charger</a> (const <a class="link" href="#_classCharger" title="Charger Class Reference">Charger</a> &amp;other)</p>
+
+<p>Copy constructor. </p>
+</li><li class="listitem"><p><a id="_classCharger_1ac91e49e417ead1c3c8a7348770283c95"></a><span class="strong"><strong>Charger</strong></span> (chargerID_t <a class="link" href="#_classCharger_1a999c5ffc695daf5d377f0894ecfa5633">chargerID</a>)</p>
+</li><li class="listitem"><p><a id="_classCharger_1a46165bf39e9b8253d94e425e1cbfa904"></a><a class="link" href="#_classCharger_1a46165bf39e9b8253d94e425e1cbfa904">~Charger</a> ()</p>
+
+<p>Destructor. </p>
+</li><li class="listitem"><p><a class="link" href="#_classCharger" title="Charger Class Reference">Charger</a> &amp; <a class="link" href="#_classCharger_1afba7e6e8d0b761a869a3d084710eb026">operator=</a> (const <a class="link" href="#_classCharger" title="Charger Class Reference">Charger</a> &amp;other)</p>
+
+<p>Assignment operator. </p>
+</li><li class="listitem"><p>bool <a class="link" href="#_classCharger_1a139cad61b3e57490836ed154d0658e80">operator==</a> (const <a class="link" href="#_classCharger" title="Charger Class Reference">Charger</a> &amp;other) const</p>
+
+<p>Equality operator. </p>
+</li><li class="listitem"><p>bool <a class="link" href="#_classCharger_1ad47d10a9aec8fb5fbc47b03a3c7cfff6">operator!=</a> (const <a class="link" href="#_classCharger" title="Charger Class Reference">Charger</a> &amp;other) const</p>
+
+<p>Inequality operator. </p>
+</li><li class="listitem"><p>chargerID_t <a class="link" href="#_classCharger_1a2ab4c6ea02a6035124d87d0ba5d8159c">getChargerID</a> () const</p>
+
+<p>Returns chargerID for this <a class="link" href="#_classCharger" title="Charger Class Reference">Charger</a>. </p>
+</li></ul></div>
+</div>
+<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="idp499"></a>Protected Attributes    </h3></div></div></div>
+    
+        <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>chargerID_t <a class="link" href="#_classCharger_1a999c5ffc695daf5d377f0894ecfa5633">chargerID</a></p>
+
+<p>The ID for this charger. </p>
+</li></ul></div>
+</div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp16"></a>Detailed Description</h3></div></div></div>
+
+
+<p><a class="link" href="#_todo_1_todo000004">Todo</a> 
+</p><p>write docs </p><p>
+</p>
+</div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp18"></a>Constructor &amp; Destructor Documentation</h3></div></div></div>
+
+<a id="_classCharger_1a85eb2b59b83e345341f814e61014b196"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp17"></a>Charger()</h4></div></div></div>
+    
+<a id="idp514" class="indexterm"></a>
+<a id="idp517" class="indexterm"></a>
+<p><code class="computeroutput">Charger::Charger (const <a class="link" href="#_classCharger" title="Charger Class Reference">Charger</a> &amp; other)</code></p><p>
+
+</p><p>Copy constructor. </p><p>
+</p>
+
+<p>
+                </p><p>
+                    <strong>
+Parameters                    . </strong>
+                    
+                    </p><div class="table"><a id="idp50"></a><p class="title"><strong>Table 2.5. </strong></p><div class="table-contents">
+                        <table class="table" border="1"><colgroup><col align="left" /><col align="left" /></colgroup><tbody><tr><td align="left">other</td><td align="left">
+<p>TODO </p>
+</td></tr></tbody></table>
+                    </div></div><p><br class="table-break" />
+                    
+                </p><p>
+                </p>
+</div>
+</div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp23"></a>Member Function Documentation</h3></div></div></div>
+
+<a id="_classCharger_1a2ab4c6ea02a6035124d87d0ba5d8159c"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp19"></a>getChargerID()</h4></div></div></div>
+    
+<a id="idp540" class="indexterm"></a>
+<a id="idp543" class="indexterm"></a>
+<p><code class="computeroutput">chargerID_t Charger::getChargerID ( ) const</code></p><p>
+
+</p><p>Returns chargerID for this <a class="link" href="#_classCharger" title="Charger Class Reference">Charger</a>. </p><p>
+</p>
+
+<p><strong>Returns. </strong>
+
+chargerID_t 
+</p><p>
+</p>
+    </div><a id="_classCharger_1ad47d10a9aec8fb5fbc47b03a3c7cfff6"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp20"></a>operator!=()</h4></div></div></div>
+    
+<a id="idp557" class="indexterm"></a>
+<a id="idp560" class="indexterm"></a>
+<p><code class="computeroutput">bool Charger::operator!= (const <a class="link" href="#_classCharger" title="Charger Class Reference">Charger</a> &amp; other) const</code></p><p>
+
+</p><p>Inequality operator. </p><p>
+</p>
+
+<p>
+                </p><p>
+                    <strong>
+Parameters                    . </strong>
+                    
+                    </p><div class="table"><a id="idp51"></a><p class="title"><strong>Table 2.6. </strong></p><div class="table-contents">
+                        <table class="table" border="1"><colgroup><col align="left" /><col align="left" /></colgroup><tbody><tr><td align="left">other</td><td align="left">
+<p></p>
+</td></tr></tbody></table>
+                    </div></div><p><br class="table-break" />
+                    
+                </p><p>
+                </p><p><strong>Returns. </strong>
+
+bool 
+</p><p>
+</p>
+    </div><a id="_classCharger_1afba7e6e8d0b761a869a3d084710eb026"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp21"></a>operator=()</h4></div></div></div>
+    
+<a id="idp585" class="indexterm"></a>
+<a id="idp588" class="indexterm"></a>
+<p><code class="computeroutput"><a class="link" href="#_classCharger" title="Charger Class Reference">Charger</a> &amp; Charger::operator= (const <a class="link" href="#_classCharger" title="Charger Class Reference">Charger</a> &amp; other)</code></p><p>
+
+</p><p>Assignment operator. </p><p>
+</p>
+
+<p>
+                </p><p>
+                    <strong>
+Parameters                    . </strong>
+                    
+                    </p><div class="table"><a id="idp52"></a><p class="title"><strong>Table 2.7. </strong></p><div class="table-contents">
+                        <table class="table" border="1"><colgroup><col align="left" /><col align="left" /></colgroup><tbody><tr><td align="left">other</td><td align="left">
+<p></p>
+</td></tr></tbody></table>
+                    </div></div><p><br class="table-break" />
+                    
+                </p><p>
+                </p><p><strong>Returns. </strong>
+
+<a class="link" href="#_classCharger" title="Charger Class Reference">Charger</a>&amp; 
+</p><p>
+</p>
+    </div><a id="_classCharger_1a139cad61b3e57490836ed154d0658e80"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp22"></a>operator==()</h4></div></div></div>
+    
+<a id="idp615" class="indexterm"></a>
+<a id="idp618" class="indexterm"></a>
+<p><code class="computeroutput">bool Charger::operator== (const <a class="link" href="#_classCharger" title="Charger Class Reference">Charger</a> &amp; other) const</code></p><p>
+
+</p><p>Equality operator. </p><p>
+</p>
+
+<p>
+                </p><p>
+                    <strong>
+Parameters                    . </strong>
+                    
+                    </p><div class="table"><a id="idp53"></a><p class="title"><strong>Table 2.8. </strong></p><div class="table-contents">
+                        <table class="table" border="1"><colgroup><col align="left" /><col align="left" /></colgroup><tbody><tr><td align="left">other</td><td align="left">
+<p></p>
+</td></tr></tbody></table>
+                    </div></div><p><br class="table-break" />
+                    
+                </p><p>
+                </p><p><strong>Returns. </strong>
+
+bool 
+</p><p>
+</p>
+</div>
+</div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp25"></a>Member Data Documentation</h3></div></div></div>
+
+<a id="_classCharger_1a999c5ffc695daf5d377f0894ecfa5633"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp24"></a>chargerID</h4></div></div></div>
+    
+<a id="idp644" class="indexterm"></a>
+<a id="idp647" class="indexterm"></a>
+<p><code class="computeroutput">chargerID_t Charger::chargerID<code class="computeroutput">[protected]</code></code></p><p>
+
+</p><p>The ID for this charger. </p><p>
+</p>
+
+<p>This is a 32-bit unsigned integer. </p>
+</div>
+<p>
+The documentation for this class was generated from the following files:</p>
+Charger.hCharger.cpp</div>
+</div>
+    <div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_classChargingNetwork"></a>ChargingNetwork Class Reference</h2></div></div></div>
+
+<a id="idp658" class="indexterm"></a>
+<p>
+<code class="computeroutput">#include &lt;ChargingNetwork.h&gt;</code>
+</p>
+Collaboration diagram for ChargingNetwork:<p>
+    </p><div class="informalfigure">
+        <div class="mediaobject" align="center"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="50%"><tr><td align="center" valign="middle"><img src="classChargingNetwork__coll__graph.png" align="middle" /></td></tr></table></div>
+    </div><p>
+</p>
+<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="idp667"></a>Public Member Functions    </h3></div></div></div>
+    
+        <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a id="_classChargingNetwork_1ade1b6a23c80126556aa8180ec65865e5"></a><a class="link" href="#_classChargingNetwork_1ade1b6a23c80126556aa8180ec65865e5">ChargingNetwork</a> ()</p>
+
+<p>Default constructor. </p>
+</li><li class="listitem"><p><a class="link" href="#_classChargingNetwork_1a742dd010f7e5da9a6aa4e2ce22072a6d">ChargingNetwork</a> (const <a class="link" href="#_classChargingNetwork" title="ChargingNetwork Class Reference">ChargingNetwork</a> &amp;other)</p>
+
+<p>Copy constructor. </p>
+</li><li class="listitem"><p><a id="_classChargingNetwork_1aab04af402aa697a94845865cbb2a42d6"></a><span class="strong"><strong>ChargingNetwork</strong></span> (const string &amp;chargingNetworkDataFile)</p>
+</li><li class="listitem"><p><a id="_classChargingNetwork_1af274c50484ec66fe43f6c2c143fe40c5"></a><a class="link" href="#_classChargingNetwork_1af274c50484ec66fe43f6c2c143fe40c5">~ChargingNetwork</a> ()</p>
+
+<p>Destructor. </p>
+</li><li class="listitem"><p><a class="link" href="#_classChargingNetwork" title="ChargingNetwork Class Reference">ChargingNetwork</a> &amp; <a class="link" href="#_classChargingNetwork_1a0d059453b29ae827377a5a2a3d91bc28">operator=</a> (const <a class="link" href="#_classChargingNetwork" title="ChargingNetwork Class Reference">ChargingNetwork</a> &amp;other)</p>
+
+<p>Assignment operator. </p>
+</li><li class="listitem"><p>bool <a class="link" href="#_classChargingNetwork_1a1f1ec9bc020b77e69ba6a4f82e275df5">operator==</a> (const <a class="link" href="#_classChargingNetwork" title="ChargingNetwork Class Reference">ChargingNetwork</a> &amp;other) const</p>
+</li><li class="listitem"><p>bool <a class="link" href="#_classChargingNetwork_1ab076cf88e36985079b70a1565b7b4d92">operator!=</a> (const <a class="link" href="#_classChargingNetwork" title="ChargingNetwork Class Reference">ChargingNetwork</a> &amp;other) const</p>
+</li></ul></div>
+</div>
+<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="idp703"></a>Static Protected Attributes    </h3></div></div></div>
+    
+        <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>static const string <a class="link" href="#_classChargingNetwork_1ad86b0ee706bd054eac25b348a3757e6c">STATIONS_HEADER</a> {"[Stations]"}</p>
+
+<p>The heading in the data file preceding the info on stations. </p>
+</li><li class="listitem"><p>static const string <a class="link" href="#_classChargingNetwork_1a13c2c586a22c1881d83873e5975e808f">CHARGERAVAILABILITY_HEADER</a> {"[Charger Availability Reports]"}</p>
+
+<p>The heading in the data file preceding the info on uptime. </p>
+</li></ul></div>
+</div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp26"></a>Detailed Description</h3></div></div></div>
+
+
+<p><a class="link" href="#_todo_1_todo000005">Todo</a> 
+</p><p>write docs </p><p>
+</p>
+</div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp28"></a>Constructor &amp; Destructor Documentation</h3></div></div></div>
+
+<a id="_classChargingNetwork_1a742dd010f7e5da9a6aa4e2ce22072a6d"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp27"></a>ChargingNetwork()</h4></div></div></div>
+    
+<a id="idp722" class="indexterm"></a>
+<a id="idp725" class="indexterm"></a>
+<p><code class="computeroutput">ChargingNetwork::ChargingNetwork (const <a class="link" href="#_classChargingNetwork" title="ChargingNetwork Class Reference">ChargingNetwork</a> &amp; other)</code></p><p>
+
+</p><p>Copy constructor. </p><p>
+</p>
+
+<p>
+                </p><p>
+                    <strong>
+Parameters                    . </strong>
+                    
+                    </p><div class="table"><a id="idp54"></a><p class="title"><strong>Table 2.9. </strong></p><div class="table-contents">
+                        <table class="table" border="1"><colgroup><col align="left" /><col align="left" /></colgroup><tbody><tr><td align="left">other</td><td align="left">
+<p>TODO </p>
+</td></tr></tbody></table>
+                    </div></div><p><br class="table-break" />
+                    
+                </p><p>
+                </p>
+</div>
+</div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp32"></a>Member Function Documentation</h3></div></div></div>
+
+<a id="_classChargingNetwork_1ab076cf88e36985079b70a1565b7b4d92"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp29"></a>operator!=()</h4></div></div></div>
+    
+<a id="idp748" class="indexterm"></a>
+<a id="idp751" class="indexterm"></a>
+<p><code class="computeroutput">bool ChargingNetwork::operator!= (const <a class="link" href="#_classChargingNetwork" title="ChargingNetwork Class Reference">ChargingNetwork</a> &amp; other) const</code></p>
+<p><a class="link" href="#_todo_1_todo000007">Todo</a> 
+</p><p>write docs</p><p>
+</p>
+
+<p>
+                </p><p>
+                    <strong>
+Parameters                    . </strong>
+                    
+                    </p><div class="table"><a id="idp55"></a><p class="title"><strong>Table 2.10. </strong></p><div class="table-contents">
+                        <table class="table" border="1"><colgroup><col align="left" /><col align="left" /></colgroup><tbody><tr><td align="left">other</td><td align="left">
+<p>TODO </p>
+</td></tr></tbody></table>
+                    </div></div><p><br class="table-break" />
+                    
+                </p><p>
+                </p><p><strong>Returns. </strong>
+
+TODO 
+</p><p>
+</p>
+    </div><a id="_classChargingNetwork_1a0d059453b29ae827377a5a2a3d91bc28"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp30"></a>operator=()</h4></div></div></div>
+    
+<a id="idp778" class="indexterm"></a>
+<a id="idp781" class="indexterm"></a>
+<p><code class="computeroutput"><a class="link" href="#_classChargingNetwork" title="ChargingNetwork Class Reference">ChargingNetwork</a> &amp; ChargingNetwork::operator= (const <a class="link" href="#_classChargingNetwork" title="ChargingNetwork Class Reference">ChargingNetwork</a> &amp; other)</code></p><p>
+
+</p><p>Assignment operator. </p><p>
+</p>
+
+<p>
+                </p><p>
+                    <strong>
+Parameters                    . </strong>
+                    
+                    </p><div class="table"><a id="idp56"></a><p class="title"><strong>Table 2.11. </strong></p><div class="table-contents">
+                        <table class="table" border="1"><colgroup><col align="left" /><col align="left" /></colgroup><tbody><tr><td align="left">other</td><td align="left">
+<p>TODO </p>
+</td></tr></tbody></table>
+                    </div></div><p><br class="table-break" />
+                    
+                </p><p>
+                </p><p><strong>Returns. </strong>
+
+TODO 
+</p><p>
+</p>
+    </div><a id="_classChargingNetwork_1a1f1ec9bc020b77e69ba6a4f82e275df5"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp31"></a>operator==()</h4></div></div></div>
+    
+<a id="idp807" class="indexterm"></a>
+<a id="idp810" class="indexterm"></a>
+<p><code class="computeroutput">bool ChargingNetwork::operator== (const <a class="link" href="#_classChargingNetwork" title="ChargingNetwork Class Reference">ChargingNetwork</a> &amp; other) const</code></p>
+<p><a class="link" href="#_todo_1_todo000006">Todo</a> 
+</p><p>write docs</p><p>
+</p>
+
+<p>
+                </p><p>
+                    <strong>
+Parameters                    . </strong>
+                    
+                    </p><div class="table"><a id="idp57"></a><p class="title"><strong>Table 2.12. </strong></p><div class="table-contents">
+                        <table class="table" border="1"><colgroup><col align="left" /><col align="left" /></colgroup><tbody><tr><td align="left">other</td><td align="left">
+<p>TODO </p>
+</td></tr></tbody></table>
+                    </div></div><p><br class="table-break" />
+                    
+                </p><p>
+                </p><p><strong>Returns. </strong>
+
+TODO 
+</p><p>
+</p>
+</div>
+</div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp35"></a>Member Data Documentation</h3></div></div></div>
+
+<a id="_classChargingNetwork_1a13c2c586a22c1881d83873e5975e808f"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp33"></a>CHARGERAVAILABILITY_HEADER</h4></div></div></div>
+    
+<a id="idp838" class="indexterm"></a>
+<a id="idp841" class="indexterm"></a>
+<p><code class="computeroutput">const string ChargingNetwork::CHARGERAVAILABILITY_HEADER {"[Charger Availability Reports]"}<code class="computeroutput">[inline]</code>, <code class="computeroutput">[static]</code>, <code class="computeroutput">[protected]</code></code></p><p>
+
+</p><p>The heading in the data file preceding the info on uptime. </p><p>
+</p>
+
+<p>After this heading is a list of chargers and their uptimes. </p>
+    </div><a id="_classChargingNetwork_1ad86b0ee706bd054eac25b348a3757e6c"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp34"></a>STATIONS_HEADER</h4></div></div></div>
+    
+<a id="idp854" class="indexterm"></a>
+<a id="idp857" class="indexterm"></a>
+<p><code class="computeroutput">const string ChargingNetwork::STATIONS_HEADER {"[Stations]"}<code class="computeroutput">[inline]</code>, <code class="computeroutput">[static]</code>, <code class="computeroutput">[protected]</code></code></p><p>
+
+</p><p>The heading in the data file preceding the info on stations. </p><p>
+</p>
+
+<p>After this heading is the list of stations and their associated chargers. </p>
+</div>
+<p>
+The documentation for this class was generated from the following files:</p>
+ChargingNetwork.hChargingNetwork.cpp</div>
+</div>
+    <div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_structstd_1_1less_3_01Charger_01_4"></a>std::less&lt; Charger &gt; Struct Reference</h2></div></div></div>
+
+<a id="idp870" class="indexterm"></a>
+<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="idp872"></a>Public Member Functions    </h3></div></div></div>
+    
+        <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a id="_structstd_1_1less_3_01Charger_01_4_1a3109ae3cf4328f48208229b972b68e75"></a>bool <span class="strong"><strong>operator()</strong></span> (const <a class="link" href="#_classCharger" title="Charger Class Reference">Charger</a> &amp;a, const <a class="link" href="#_classCharger" title="Charger Class Reference">Charger</a> &amp;b) const</p>
+</li></ul></div>
+</div>
+<p>
+The documentation for this struct was generated from the following file:</p>
+Charger.h</div>
+    <div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_structstd_1_1less_3_01Station_01_4"></a>std::less&lt; Station &gt; Struct Reference</h2></div></div></div>
+
+<a id="idp883" class="indexterm"></a>
+<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="idp885"></a>Public Member Functions    </h3></div></div></div>
+    
+        <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a id="_structstd_1_1less_3_01Station_01_4_1a6eb48ea455261ef8e597ed15c01b3968"></a>bool <span class="strong"><strong>operator()</strong></span> (const <a class="link" href="#_classStation" title="Station Class Reference">Station</a> &amp;a, const <a class="link" href="#_classStation" title="Station Class Reference">Station</a> &amp;b) const</p>
+</li></ul></div>
+</div>
+<p>
+The documentation for this struct was generated from the following file:</p>
+Station.h</div>
+    <div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_classStation"></a>Station Class Reference</h2></div></div></div>
+
+<a id="idp896" class="indexterm"></a>
+<p>
+<code class="computeroutput">#include &lt;Station.h&gt;</code>
+</p>
+<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="idp900"></a>Public Member Functions    </h3></div></div></div>
+    
+        <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a id="_classStation_1a73d335726aad1d844d81cda6d9fd74e6"></a><a class="link" href="#_classStation_1a73d335726aad1d844d81cda6d9fd74e6">Station</a> ()</p>
+
+<p>Default constructor. </p>
+</li><li class="listitem"><p><a class="link" href="#_classStation_1a969cd38f101eaa6eaa735f5bd887f077">Station</a> (const <a class="link" href="#_classStation" title="Station Class Reference">Station</a> &amp;other)</p>
+
+<p>Copy constructor. </p>
+</li><li class="listitem"><p><a class="link" href="#_classStation_1a1a2296eff69a156c5881843de3c7e610">Station</a> (const stationID_t stationID)</p>
+
+<p>constructor from stationID </p>
+</li><li class="listitem"><p><a id="_classStation_1a00434e79e8ee7f4ebd6d3b631dde5ac0"></a><a class="link" href="#_classStation_1a00434e79e8ee7f4ebd6d3b631dde5ac0">~Station</a> ()</p>
+
+<p>Destructor. </p>
+</li><li class="listitem"><p><a class="link" href="#_classStation" title="Station Class Reference">Station</a> &amp; <a class="link" href="#_classStation_1ad247aba17ae86863c2e7bfb82e8a0c3b">operator=</a> (const <a class="link" href="#_classStation" title="Station Class Reference">Station</a> &amp;other)</p>
+
+<p>Assignment operator. </p>
+</li><li class="listitem"><p>bool <a class="link" href="#_classStation_1a8a7eae4c39f16d6f04f2c4d1ca1a1f57">operator==</a> (const <a class="link" href="#_classStation" title="Station Class Reference">Station</a> &amp;other) const</p>
+</li><li class="listitem"><p>bool <a class="link" href="#_classStation_1ad0227ba53445442e48379ca7d4975f4d">operator!=</a> (const <a class="link" href="#_classStation" title="Station Class Reference">Station</a> &amp;other) const</p>
+</li><li class="listitem"><p><a id="_classStation_1a09b1d5389a07e423a88f15218c09b4cb"></a>stationID_t <span class="strong"><strong>getStationID</strong></span> () const</p>
+</li></ul></div>
+</div>
+<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="idp940"></a>Protected Attributes    </h3></div></div></div>
+    
+        <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a id="_classStation_1acdee3aa86c81c74459fb8e64da012432"></a>stationID_t <span class="strong"><strong>stationID</strong></span></p>
+</li></ul></div>
+</div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp36"></a>Detailed Description</h3></div></div></div>
+
+
+<p><a class="link" href="#_todo_1_todo000008">Todo</a> 
+</p><p>write docs </p><p>
+</p>
+</div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp39"></a>Constructor &amp; Destructor Documentation</h3></div></div></div>
+
+<a id="_classStation_1a969cd38f101eaa6eaa735f5bd887f077"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp37"></a>Station()<code class="computeroutput">[1/2]</code></h4></div></div></div>
+    
+<a id="idp956" class="indexterm"></a>
+<a id="idp959" class="indexterm"></a>
+<p><code class="computeroutput">Station::Station (const <a class="link" href="#_classStation" title="Station Class Reference">Station</a> &amp; other)</code></p><p>
+
+</p><p>Copy constructor. </p><p>
+</p>
+
+<p>
+                </p><p>
+                    <strong>
+Parameters                    . </strong>
+                    
+                    </p><div class="table"><a id="idp58"></a><p class="title"><strong>Table 2.13. </strong></p><div class="table-contents">
+                        <table class="table" border="1"><colgroup><col align="left" /><col align="left" /></colgroup><tbody><tr><td align="left">other</td><td align="left">
+<p>TODO </p>
+</td></tr></tbody></table>
+                    </div></div><p><br class="table-break" />
+                    
+                </p><p>
+                </p>
+    </div><a id="_classStation_1a1a2296eff69a156c5881843de3c7e610"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp38"></a>Station()<code class="computeroutput">[2/2]</code></h4></div></div></div>
+    
+<a id="idp982" class="indexterm"></a>
+<a id="idp985" class="indexterm"></a>
+<p><code class="computeroutput">Station::Station (const stationID_t stationID)</code></p><p>
+
+</p><p>constructor from stationID </p><p>
+</p>
+
+<p>
+                </p><p>
+                    <strong>
+Parameters                    . </strong>
+                    
+                    </p><div class="table"><a id="idp59"></a><p class="title"><strong>Table 2.14. </strong></p><div class="table-contents">
+                        <table class="table" border="1"><colgroup><col align="left" /><col align="left" /></colgroup><tbody><tr><td align="left">other</td><td align="left">
+<p>TODO </p>
+</td></tr></tbody></table>
+                    </div></div><p><br class="table-break" />
+                    
+                </p><p>
+                </p>
+</div>
+</div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp43"></a>Member Function Documentation</h3></div></div></div>
+
+<a id="_classStation_1ad0227ba53445442e48379ca7d4975f4d"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp40"></a>operator!=()</h4></div></div></div>
+    
+<a id="idp1007" class="indexterm"></a>
+<a id="idp1010" class="indexterm"></a>
+<p><code class="computeroutput">bool Station::operator!= (const <a class="link" href="#_classStation" title="Station Class Reference">Station</a> &amp; other) const</code></p>
+<p><a class="link" href="#_todo_1_todo000010">Todo</a> 
+</p><p>write docs</p><p>
+</p>
+
+<p>
+                </p><p>
+                    <strong>
+Parameters                    . </strong>
+                    
+                    </p><div class="table"><a id="idp60"></a><p class="title"><strong>Table 2.15. </strong></p><div class="table-contents">
+                        <table class="table" border="1"><colgroup><col align="left" /><col align="left" /></colgroup><tbody><tr><td align="left">other</td><td align="left">
+<p>TODO </p>
+</td></tr></tbody></table>
+                    </div></div><p><br class="table-break" />
+                    
+                </p><p>
+                </p><p><strong>Returns. </strong>
+
+TODO 
+</p><p>
+</p>
+    </div><a id="_classStation_1ad247aba17ae86863c2e7bfb82e8a0c3b"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp41"></a>operator=()</h4></div></div></div>
+    
+<a id="idp1037" class="indexterm"></a>
+<a id="idp1040" class="indexterm"></a>
+<p><code class="computeroutput"><a class="link" href="#_classStation" title="Station Class Reference">Station</a> &amp; Station::operator= (const <a class="link" href="#_classStation" title="Station Class Reference">Station</a> &amp; other)</code></p><p>
+
+</p><p>Assignment operator. </p><p>
+</p>
+
+<p>
+                </p><p>
+                    <strong>
+Parameters                    . </strong>
+                    
+                    </p><div class="table"><a id="idp61"></a><p class="title"><strong>Table 2.16. </strong></p><div class="table-contents">
+                        <table class="table" border="1"><colgroup><col align="left" /><col align="left" /></colgroup><tbody><tr><td align="left">other</td><td align="left">
+<p>TODO </p>
+</td></tr></tbody></table>
+                    </div></div><p><br class="table-break" />
+                    
+                </p><p>
+                </p><p><strong>Returns. </strong>
+
+TODO 
+</p><p>
+</p>
+    </div><a id="_classStation_1a8a7eae4c39f16d6f04f2c4d1ca1a1f57"></a>    <div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp42"></a>operator==()</h4></div></div></div>
+    
+<a id="idp1066" class="indexterm"></a>
+<a id="idp1069" class="indexterm"></a>
+<p><code class="computeroutput">bool Station::operator== (const <a class="link" href="#_classStation" title="Station Class Reference">Station</a> &amp; other) const</code></p>
+<p><a class="link" href="#_todo_1_todo000009">Todo</a> 
+</p><p>write docs</p><p>
+</p>
+
+<p>
+                </p><p>
+                    <strong>
+Parameters                    . </strong>
+                    
+                    </p><div class="table"><a id="idp62"></a><p class="title"><strong>Table 2.17. </strong></p><div class="table-contents">
+                        <table class="table" border="1"><colgroup><col align="left" /><col align="left" /></colgroup><tbody><tr><td align="left">other</td><td align="left">
+<p>TODO </p>
+</td></tr></tbody></table>
+                    </div></div><p><br class="table-break" />
+                    
+                </p><p>
+                </p><p><strong>Returns. </strong>
+
+TODO 
+</p><p>
+</p>
+</div>
+<p>
+The documentation for this class was generated from the following files:</p>
+Station.hStation.cpp</div>
+</div>
+</div>
+<div class="index"><div class="titlepage"><div><div><h1 class="title"><a id="idp45"></a>Index</h1></div></div></div><div xmlns:xlink="http://www.w3.org/1999/xlink" class="index"><div class="indexdiv"><h3>A</h3><dl><dt id="ientry-idp261">AvailabilityReport, <a class="indexterm" href="#_classAvailabilityReport">AvailabilityReport Class Reference</a></dt><dd><dl><dt>AvailabilityReport, <a class="indexterm" href="#idp10">AvailabilityReport()</a></dt><dt>operator!=, <a class="indexterm" href="#idp12">operator!=()</a></dt><dt>operator=, <a class="indexterm" href="#idp13">operator=()</a></dt><dt>operator==, <a class="indexterm" href="#idp14">operator==()</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>C</h3><dl><dt id="ientry-idp451">Charger, <a class="indexterm" href="#_classCharger">Charger Class Reference</a></dt><dd><dl><dt>Charger, <a class="indexterm" href="#idp17">Charger()</a></dt><dt>chargerID, <a class="indexterm" href="#idp24">chargerID</a></dt><dt>getChargerID, <a class="indexterm" href="#idp19">getChargerID()</a></dt><dt>operator!=, <a class="indexterm" href="#idp20">operator!=()</a></dt><dt>operator=, <a class="indexterm" href="#idp21">operator=()</a></dt><dt>operator==, <a class="indexterm" href="#idp22">operator==()</a></dt></dl></dd><dt id="ientry-idp838">CHARGERAVAILABILITY_HEADER</dt><dd><dl><dt>ChargingNetwork, <a class="indexterm" href="#idp33">CHARGERAVAILABILITY_HEADER</a></dt></dl></dd><dt id="ientry-idp644">chargerID</dt><dd><dl><dt>Charger, <a class="indexterm" href="#idp24">chargerID</a></dt></dl></dd><dt id="ientry-idp658">ChargingNetwork, <a class="indexterm" href="#_classChargingNetwork">ChargingNetwork Class Reference</a></dt><dd><dl><dt>CHARGERAVAILABILITY_HEADER, <a class="indexterm" href="#idp33">CHARGERAVAILABILITY_HEADER</a></dt><dt>ChargingNetwork, <a class="indexterm" href="#idp27">ChargingNetwork()</a></dt><dt>operator!=, <a class="indexterm" href="#idp29">operator!=()</a></dt><dt>operator=, <a class="indexterm" href="#idp30">operator=()</a></dt><dt>operator==, <a class="indexterm" href="#idp31">operator==()</a></dt><dt>STATIONS_HEADER, <a class="indexterm" href="#idp34">STATIONS_HEADER</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>G</h3><dl><dt id="ientry-idp540">getChargerID</dt><dd><dl><dt>Charger, <a class="indexterm" href="#idp19">getChargerID()</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>O</h3><dl><dt id="ientry-idp362">operator!=</dt><dd><dl><dt>AvailabilityReport, <a class="indexterm" href="#idp12">operator!=()</a></dt><dt>Charger, <a class="indexterm" href="#idp20">operator!=()</a></dt><dt>ChargingNetwork, <a class="indexterm" href="#idp29">operator!=()</a></dt><dt>Station, <a class="indexterm" href="#idp40">operator!=()</a></dt></dl></dd><dt id="ientry-idp392">operator=</dt><dd><dl><dt>AvailabilityReport, <a class="indexterm" href="#idp13">operator=()</a></dt><dt>Charger, <a class="indexterm" href="#idp21">operator=()</a></dt><dt>ChargingNetwork, <a class="indexterm" href="#idp30">operator=()</a></dt><dt>Station, <a class="indexterm" href="#idp41">operator=()</a></dt></dl></dd><dt id="ientry-idp421">operator==</dt><dd><dl><dt>AvailabilityReport, <a class="indexterm" href="#idp14">operator==()</a></dt><dt>Charger, <a class="indexterm" href="#idp22">operator==()</a></dt><dt>ChargingNetwork, <a class="indexterm" href="#idp31">operator==()</a></dt><dt>Station, <a class="indexterm" href="#idp42">operator==()</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>S</h3><dl><dt id="ientry-idp896">Station, <a class="indexterm" href="#_classStation">Station Class Reference</a></dt><dd><dl><dt>operator!=, <a class="indexterm" href="#idp40">operator!=()</a></dt><dt>operator=, <a class="indexterm" href="#idp41">operator=()</a></dt><dt>operator==, <a class="indexterm" href="#idp42">operator==()</a></dt><dt>Station, <a class="indexterm" href="#idp37">Station()[1/2]</a>, <a class="indexterm" href="#idp38">Station()[2/2]</a></dt></dl></dd><dt id="ientry-idp854">STATIONS_HEADER</dt><dd><dl><dt>ChargingNetwork, <a class="indexterm" href="#idp34">STATIONS_HEADER</a></dt></dl></dd><dt id="ientry-idp870">std::less&lt; Charger &gt;, <a class="indexterm" href="#_structstd_1_1less_3_01Charger_01_4">std::less&lt; Charger &gt; Struct Reference</a></dt><dt id="ientry-idp883">std::less&lt; Station &gt;, <a class="indexterm" href="#_structstd_1_1less_3_01Station_01_4">std::less&lt; Station &gt; Struct Reference</a></dt></dl></div></div></div>
+</div>
+</div></body></html>

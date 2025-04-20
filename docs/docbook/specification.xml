@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+  <chapter>
+    <title>Electric Era Coding Challenge Specification</title>
+      <info>
+          <author>
+    <personname>
+            <firstname>Hasitha</firstname>
+      <surname>Dharmasiri</surname>
+    </personname>
+  </author>
+      </info>
+      <section>
+      <title>Overview</title>
+      <orderedlist>
+        <listitem>
+          <para>
+            This is a simple coding challenge to test your abilities.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            To join the software program at Electric Era, you must complete this challenge.
+          </para>
+        </listitem>
+        </orderedlist>
+    </section>
+    <section>
+      <title>Challenge</title>
+      <orderedlist>
+        <listitem>
+          <para>You must write a program that calculates uptime for stations in a charging network.</para>
+        </listitem>
+        <listitem>
+          <para>It will take in a formatted input file that indicates individual charger uptime status for a given time period and write output to standard-output (stdout).</para>
+        </listitem>
+        <listitem>
+          <para>Station Uptime is defined as the percentage of time that any charger at a station was available, out of the entire time period that any charger at that station was reporting in.</para>
+        </listitem>
+      </orderedlist>
+
+    <section>
+      <title>Input File Format</title>
+      <orderedlist>
+        <listitem>
+          <para>The input file will be a simple ASCII text file.</para>
+        </listitem>
+        <listitem>
+          <para>The first section will be a list of station IDs that indicate the Charger IDs present at each station.</para>
+        </listitem>
+        <listitem>
+          <para>The second section will be a report of each Charger ID's availability reports.</para>
+        </listitem>
+        <listitem>
+          <para>An availability report will contain the Charger ID, the start time, the end time, and if the charger was "up" (i.e. available) or not.</para>
+        </listitem>
+        <listitem>
+          <para>The following preconditons will apply:</para>
+        </listitem>
+        <listitem>
+          <para>Station ID will be guaranteed to be a unsigned 32-bit integer and guaranteed to be unique to any other Station ID.</para>
+        </listitem>
+        <listitem>
+          <para>Charger ID will be guaranteed to be a unsigned 32-bit integer and guaranteed to be unique across all Station IDs.</para>
+        </listitem>
+        <listitem>
+          <para>start time nanos and end time nanos are guaranteed to fit within a unsigned 64-bit integer.</para>
+        </listitem>
+        <listitem>
+          <para>up will always be true or false</para>
+        </listitem>
+        <listitem>
+          <para>Each Charger ID may have multiple availability report entries.</para>
+        </listitem>
+        <listitem>
+          <para>Report entries need not be contiguous in time for a given Charger ID.</para>
+        </listitem>
+        <listitem>
+          <para>A gap in time in a given Charger ID's availability report should count as downtime.</para>
+        </listitem>
+        <listitem>
+          <informaltable frame="all">
+            <tgroup cols="1">
+              <tbody>
+                <row>
+                  <entry>
+                    <orderedlist>
+                      <listitem>
+                        <para>[Stations]</para>
+                      </listitem>
+                      <listitem>
+                        <para>&lt;Station ID 1&gt; &lt;Charger ID 1&gt; &lt;Charger ID 2&gt; ... &lt;Charger ID n&gt;</para>
+                      </listitem>
+                      <listitem>
+                        <para>...</para>
+                      </listitem>
+                      <listitem>
+                        <para>&lt;Station ID n&gt; ...</para>
+                      </listitem>
+                      <listitem>
+                        <para/>
+                      </listitem>
+                      <listitem>
+                        <para>[Charger Availability Reports]</para>
+                      </listitem>
+                      <listitem>
+                        <para>&lt;Charger ID 1&gt; &lt;start time nanos&gt; &lt;end time nanos&gt; &lt;up (true/false)&gt;</para>
+                      </listitem>
+                      <listitem>
+                        <para>&lt;Charger ID 1&gt; &lt;start time nanos&gt; &lt;end time nanos&gt; &lt;up (true/false)&gt;</para>
+                      </listitem>
+                      <listitem>
+                        <para>...</para>
+                      </listitem>
+                      <listitem>
+                        <para>&lt;Charger ID 2&gt; &lt;start time nanos&gt; &lt;end time nanos&gt; &lt;up (true/false)&gt;</para>
+                      </listitem>
+                      <listitem>
+                        <para>&lt;Charger ID 2&gt; &lt;start time nanos&gt; &lt;end time nanos&gt; &lt;up (true/false)&gt;</para>
+                      </listitem>
+                      <listitem>
+                        <para>...</para>
+                      </listitem>
+                      <listitem>
+                        <para>&lt;Charger ID n&gt; &lt;start time nanos&gt; &lt;end time nanos&gt; &lt;up (true/false)&gt;</para>
+                      </listitem>
+                    </orderedlist>
+                  </entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </informaltable>
+        </listitem>
+      </orderedlist>
+    </section>
+    <section xml:id="parameters">
+      <title>Program Parameters and Runtime Conditions</title>
+      <orderedlist>
+        <listitem>
+          <para xml:id="environment">Your program will be executed in a Linux environment running on an amd64 architecture.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            If your chosen language of submission is compiled, ensure it compiles in that environment.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Please avoid use of non-standard dependencies.
+            </para>
+        </listitem>
+        <listitem>
+          <para>The program should accept a single argument, the path to the input file. The input file may not necessarily be co-located in the same folder as the program.</para>
+        </listitem>
+        <listitem>
+          <para>Example CLI execution:</para>
+        </listitem>
+        <listitem>
+          <para><anchor id="code-50"/><anchor id="LC1"/>./your_submission relative/path/to/input/file</para>
+        </listitem>
+      </orderedlist>
+    </section>
+    <section>
+      <title>Output Format</title>
+      <orderedlist>
+        <listitem>
+          <para>
+            The output shall be written to stdout. If the input is invalid, please simply print ERROR and exit.
+            </para>
+        </listitem>
+        <listitem>
+          <para>
+            stderr may contain detailed error information but is not mandatory.
+            </para>
+        </listitem>
+        <listitem>
+          <para>
+            If there is no error, please write stdout as follows, and then exit gracefully.
+            </para>
+        </listitem>
+        <listitem>
+          <para>&lt;Station ID 1&gt; &lt;Station ID 1 uptime&gt;</para>
+        </listitem>
+        <listitem>
+          <para>&lt;Station ID 2&gt; &lt;Station ID 2 uptime&gt;</para>
+        </listitem>
+        <listitem>
+          <para>...</para>
+        </listitem>
+        <listitem>
+          <para>&lt;Station ID n&gt; &lt;Station ID n uptime&gt;</para>
+        </listitem>
+        <listitem>
+          <para>Station ID n uptime should be an integer in the range [0-100] representing the given station's uptime percentage. The value should be rounded down to the nearest percent.</para>
+        </listitem>
+        <listitem>
+          <para>Please output Station IDs in <emphasis>ascending order</emphasis>.</para>
+        </listitem>
+      </orderedlist>
+    </section>
+
+    </section>
+    <section>
+      <title>Testing and Submission</title>
+      <orderedlist>
+        <listitem>
+          <para>This repository contains a few example input files, along with the expected stdout output (this expected stdout is encoded in a separate paired file).</para>
+        </listitem>
+        <listitem>
+          <para>Please submit the following in a zip file to coding-challenge-submissions@electricera.tech for consideration:</para>
+        </listitem>
+      </orderedlist>
+    </section>
+    <section>
+      <title>Considerations</title>
+      <orderedlist>
+        <listitem>All aspects of your solution will be considered. Be mindful of:</listitem>
+        <listitem>Correctness for both normal and edge cases</listitem>
+        <listitem>Error-handling for improper inputs or unmet preconditions</listitem>
+        <listitem>Maintainability and readability of your solution</listitem>
+        <listitem>Scalability of the solution with increasingly large datasets</listitem>
+      </orderedlist>
+    </section>
+  </chapter>
